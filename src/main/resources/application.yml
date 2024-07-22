@@ -1,0 +1,31 @@
+server:
+    port: 9394
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123456 #config service kullanılırsa {cipher}asdasdasdasdasda gibi şifreli olarak saklanabilir
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      
+      ddl-auto: update
+   
+
+  
+    properties:
+      hibernate:
+        default_schema: auth_service       
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+SECRET_KEY: .kJShNq
+jwt:
+  secret: KJutnA.
+  expiration: 360000
